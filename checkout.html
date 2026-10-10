@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — The Crochet Vault</title>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1423018695826952');fbq('track','PageView');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C65D3B;--terra-d:#A84A2C;--cream:#FBF4E9;--ink:#4A3B32;--muted:#8a7a6f;--line:#ead9c4;--green:#2E8B57;--gold:#E0A458;--soft:#FFFCF6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Nunito",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+.bar{background:var(--green);color:#fff;text-align:center;font-weight:800;padding:11px;font-size:14px}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 140px}
+.logo{text-align:center;font-family:"Fraunces",serif;font-weight:900;color:var(--terra-d);font-size:22px;margin:22px 0 4px}
+.logo span{color:var(--gold)}
+h1{font-family:"Fraunces",serif;font-size:25px;color:var(--terra-d);font-weight:900;text-align:center;margin:6px 0 2px}
+.sub{text-align:center;color:#5f4e43;font-size:14.5px;margin-bottom:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px;margin:14px 0;box-shadow:0 10px 26px rgba(74,59,50,.07)}
+.main-row{display:flex;align-items:center;gap:12px}
+.main-row img{width:72px;height:72px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.main-row .t{flex:1;font-weight:800;font-size:16px}
+.main-row .t small{display:block;font-weight:600;color:var(--muted);font-size:12.5px}
+.main-row .p{font-weight:900;font-size:17px;color:var(--terra-d)}
+.sechead{font-family:"Fraunces",serif;font-weight:800;color:var(--terra-d);font-size:17px;margin:22px 0 2px;text-align:center}
+.sechead2{text-align:center;color:var(--muted);font-size:13px;margin-bottom:8px}
+.bump{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid var(--line);border-radius:14px;padding:13px 14px;margin:10px 0;cursor:pointer;transition:border-color .15s,background .15s}
+.bump.on{border-color:var(--green);background:#f4fbf6}
+.bump input{margin-top:3px;width:20px;height:20px;accent-color:var(--green);flex-shrink:0;cursor:pointer}
+.bump .bt{flex:1}
+.bump .bt b{font-size:15px}
+.bump .bt small{display:block;color:#6b5a4f;font-size:13px;margin-top:2px}
+.bump .bp{font-weight:900;color:var(--terra-d);white-space:nowrap;font-size:15px}
+.bump .tag{display:inline-block;background:#fff3e2;color:var(--terra-d);border:1px solid var(--gold);border-radius:999px;font-size:10.5px;font-weight:800;padding:1px 8px;margin-bottom:3px;text-transform:uppercase;letter-spacing:.03em}
+.vip{border-color:var(--gold);background:#fffaf0}
+.totbar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(74,59,50,.12);padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:50}
+.totin{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.totin .lbl{font-weight:800;color:var(--muted);font-size:13px}
+.totin .amt{font-family:"Fraunces",serif;font-weight:900;font-size:26px;color:var(--terra-d);line-height:1}
+.totin .go{flex:1;background:var(--terra);color:#fff;border:none;border-radius:999px;padding:15px 18px;font-weight:900;font-size:16px;cursor:pointer;box-shadow:0 8px 20px rgba(198,93,59,.3);font-family:"Nunito",sans-serif}
+.totin .go:active{transform:translateY(1px)}
+.totin .go[disabled]{opacity:.6;cursor:default}
+.trust{text-align:center;color:var(--muted);font-size:12px;margin-top:14px;line-height:1.5}
+.err{display:none;background:#fdecea;border:1px solid #f5c6cb;color:#9b2c2c;border-radius:10px;padding:10px 12px;font-size:13px;margin-top:10px;text-align:center}
+</style>
+</head><body>
+<div class="bar">🔒 Secure checkout — instant access after payment</div>
+<div class="wrap">
+  <div class="logo">🧶 The Crochet <span>Vault</span></div>
+  <h1>You're one step away.</h1>
+  <p class="sub">Confirm your order below. Check any add-ons you want — or just grab the Vault.</p>
+
+  <div class="card">
+    <div class="main-row">
+      <img src="hero-collections.webp" alt="The Crochet Vault — 10,000 patterns">
+      <div class="t">The Crochet Vault — 10,000 Patterns<small>Full row-by-row counts &amp; symbols · instant download</small></div>
+      <div class="p">$10</div>
+    </div>
+  </div>
+
+  <div class="sechead">🎁 Make it count — add these once (you won't see this price again)</div>
+  <div class="sechead2">One-time add-ons. Delivered with your Vault. No subscriptions.</div>
+
+  <label class="bump" data-bump="seasonal" data-price="9">
+    <input type="checkbox">
+    <div class="bt"><b>Seasonal Favorites Pack</b><small>Holiday, Christmas, Halloween, Easter &amp; special-occasion patterns — ready to gift all year.</small></div>
+    <div class="bp">+$9</div>
+  </label>
+
+  <label class="bump" data-bump="selling" data-price="12">
+    <input type="checkbox">
+    <div class="bt"><b>Start-Selling Kit</b><small>Turn your crochet into cash — pricing sheets, listing templates &amp; where to sell your finished pieces.</small></div>
+    <div class="bp">+$12</div>
+  </label>
+
+  <label class="bump" data-bump="video" data-price="15">
+    <input type="checkbox">
+    <div class="bt"><b>Crochet From Scratch — Video Masterclass</b><small>Never held a hook? Watch over-the-shoulder lessons from your very first stitch to your first finished plushie.</small></div>
+    <div class="bp">+$15</div>
+  </label>
+
+  <label class="bump vip" data-bump="lifetime" data-price="19">
+    <input type="checkbox">
+    <div class="bt"><span class="tag">Best value · lifetime</span><b>VIP Lifetime Access — All Future Patterns &amp; Updates</b><small>Every new pattern we ever add is yours, free, forever. Lock it in once at today's price.</small></div>
+    <div class="bp">+$19</div>
+  </label>
+
+  <div class="err" id="err">Something went wrong starting checkout. Please try again.</div>
+
+  <div class="trust">💳 Payment securely processed by Stripe · 7-day happy-maker guarantee<br>100% digital. No physical item ships. Any income figures are illustrative.</div>
+</div>
+
+<div class="totbar">
+  <div class="totin">
+    <div><div class="lbl">Total today</div><div class="amt" id="amt">$10</div></div>
+    <button class="go" id="go">🧶 Complete my order →</button>
+  </div>
+</div>
+
+<script>
+var SUPA="https://nwpoweamwnjqbgnwpusq.supabase.co/functions/v1/crochet-checkout";
+var ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53cG93ZWFtd25qcWJnbndwdXNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMTM1NTQsImV4cCI6MjA5NjY4OTU1NH0.X4wYz5hO-zB7Lxiy1Tl-t38Mp1n-c978L-iw7JMWYNQ";
+var params=new URLSearchParams(location.search||"");
+function money(n){return "$"+n;}
+function recalc(){
+  var t=10, sel=[];
+  document.querySelectorAll('.bump').forEach(function(l){
+    var cb=l.querySelector('input');
+    if(cb.checked){ l.classList.add('on'); t+=parseInt(l.getAttribute('data-price'),10); sel.push(l.getAttribute('data-bump')); }
+    else l.classList.remove('on');
+  });
+  document.getElementById('amt').textContent=money(t);
+  return sel;
+}
+document.querySelectorAll('.bump input').forEach(function(cb){cb.addEventListener('change',recalc);});
+recalc();
+document.getElementById('go').addEventListener('click',async function(){
+  var btn=this; var sel=recalc();
+  btn.disabled=true; btn.textContent="Starting secure checkout…";
+  document.getElementById('err').style.display='none';
+  try{ if(window.fbq) fbq('track','InitiateCheckout'); }catch(e){}
+  try{
+    var r=await fetch(SUPA,{method:'POST',headers:{'content-type':'application/json','Authorization':'Bearer '+ANON},body:JSON.stringify({
+      bumps:sel,
+      success_base:location.origin,
+      qs:params.toString(),
+      utm_source:params.get('utm_source')||'',
+      utm_campaign:params.get('utm_campaign')||'',
+      fbclid:params.get('fbclid')||''
+    })});
+    var d=await r.json();
+    if(d && d.url){ location.href=d.url; return; }
+    throw new Error('no url');
+  }catch(e){
+    btn.disabled=false; btn.textContent="🧶 Complete my order →";
+    document.getElementById('err').style.display='block';
+  }
+});
+</script>
+</body></html>

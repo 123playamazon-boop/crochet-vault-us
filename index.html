@@ -368,12 +368,12 @@ section[id]{scroll-margin-top:72px}
 <script>
 (function(){
 // Stripe payment link (main $10, with optional order bumps attached at checkout)
-var CK={ main:"https://buy.stripe.com/9B63cv55J6aF0aX48dfMA0T" };
+var CK={ main:"checkout.html" };
 var qs=location.search||"";
 document.querySelectorAll('a[data-checkout]').forEach(function(a){
 var k=a.getAttribute('data-checkout'); var base=CK[k]||'#offer';
-if(base.indexOf('http')===0){ var u=base+(base.indexOf('?')>-1?'&':'?')+qs.replace(/^\?/,''); a.setAttribute('href', qs?u:base); }
-a.addEventListener('click',function(){ try{ if(window.fbq) fbq('track','InitiateCheckout'); }catch(e){} });
+if(base.charAt(0)!=='#'){ var u=base+(base.indexOf('?')>-1?'&':'?')+qs.replace(/^\?/,''); a.setAttribute('href', qs?u:base); }
+a.addEventListener('click',function(){ try{ if(window.fbq) fbq('track','ViewContent'); }catch(e){} });
 });
 })();
 </script>
